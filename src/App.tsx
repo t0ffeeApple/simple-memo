@@ -1,5 +1,6 @@
 import Layout from "./components/Layout";
 import Editor from "./components/Editor";
+import MemoList from "./components/MemoList";
 import { useState } from "react";
 import { Memo } from "./types";
 
@@ -32,9 +33,7 @@ function App(): JSX.Element {
           onSubmit={addMemo}
         />
       </div>
-      {memos.map((memo) => (
-        <p key={memo.id}>{memo.text}</p>
-      ))}
+      <MemoList memos={memos} setMemos={setMemos} />
     </Layout>
   );
 }
